@@ -8,6 +8,7 @@ import {
   FaShoppingCart,
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "../assets/logo1.png"; // Adjust the path as necessary
 
 const navLinks = [
   { name: "Home", to: "/" },
@@ -26,7 +27,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
         {/* Logo + Brand */}
         <div className="flex items-center space-x-2">
-          <img src="src/assets/logo1.png" alt="Logo" className="h-10" />
+          <img src={logo} alt="Logo" className="h-10" />
           <span className="text-2xl font-serif italic text-gray-800">
             Pozze
           </span>
