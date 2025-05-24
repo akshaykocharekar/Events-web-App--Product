@@ -127,8 +127,8 @@ const Gallery = () => {
           {carouselImages.map((img, i) => (
             <img
               key={i}
-              src={img}
-              alt={`Slide ${i}`}
+              src={img.src} // ✅ FIXED HERE
+              alt={img.alt}
               className="inline-block w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
             />
           ))}
