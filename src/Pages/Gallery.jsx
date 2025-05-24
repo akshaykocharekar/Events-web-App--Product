@@ -1,19 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 import Layout from "../Components/Layout";
 import Masonry from "../Components/Masonry";
-
+import image1 from "../assets/c1.jpg";
+import image2 from "../assets/c2.jpg";
+import image3 from "../assets/c3.jpg";
 const carouselImages = [
   // Destination Wedding
-  "src/assets/c1.jpg",
+  { src: image1, alt: "Destination Wedding" },
 
   // Corporate Event
-  "src/assets/c2.jpg",
+  { src: image2, alt: "Corporate Event" },
 
   // Luxury Party Ambience
-  "src/assets/c1.jpg",
+  { src: image3, alt: "Luxury Party Ambience" },
 
   // Beach Wedding
-  "src/assets/c2.jpg",
+  { src: image2, alt: "Corporate Event" },
 ];
 
 const masonryData = [
@@ -29,12 +31,7 @@ const masonryData = [
       "https://images.unsplash.com/photo-1583878545126-2f1ca0142714?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZGVzdGluYXRpb24lMjB3ZWRkaW5nfGVufDB8fDB8fHww",
     height: 400,
   },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1515232389446-a17ce9ca7434?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGRlc3RpbmF0aW9uJTIwd2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D",
-    height: 400,
-  },
+
   {
     id: 4,
     image:
