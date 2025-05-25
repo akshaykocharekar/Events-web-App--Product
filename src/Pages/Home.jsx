@@ -1,10 +1,7 @@
 import React from "react";
-import Layout from "../Components/Layout";
-
-import Counter from "../Components/Counter";
 import { NavLink } from "react-router-dom";
 import { AnimatedTestimonials } from "../Components/AnimatedTestimonials";
-import { TypewriterEffectSmooth } from "../components/TypewriterEffect";
+import { TypewriterEffectSmooth } from "../components/TypewriterEffect.jsx";
 
 const words = [
   { text: "Celebrate" },
