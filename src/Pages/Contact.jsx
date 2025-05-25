@@ -10,8 +10,8 @@ import {
   FaTwitter,
   FaFacebookF,
 } from "react-icons/fa";
+import ShinyText from "../Components/ShinyText";
 
-// Reusable InputField component
 const InputField = ({ label, name, type = "text", value, onChange, error }) => (
   <div className="relative w-full">
     <input
@@ -20,20 +20,20 @@ const InputField = ({ label, name, type = "text", value, onChange, error }) => (
       id={name}
       value={value}
       onChange={onChange}
-      placeholder=" " // keep this blank space for peer-* CSS to work
-      className={`peer w-full h-12 rounded-lg border px-3 pt-4 pb-1 text-sm placeholder-transparent outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-200 ${
+      placeholder=" "
+      className={`peer w-full h-12 rounded-lg border px-3 pt-4 pb-1 text-sm placeholder-transparent outline-none transition-all focus:border-[#31eddb] focus:ring-2 focus:ring-[#31eddb] ${
         error ? "border-red-500" : "border-gray-300"
       }`}
     />
     <label
       htmlFor={name}
-      className={`absolute left-3 top-1 text-xs text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-xs peer-focus:text-blue-600 ${
+      className={`absolute left-3 top-1 text-xs text-gray-700 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-[#31eddb] ${
         value ? "hidden" : ""
       }`}
     >
       {label}
     </label>
-    {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
+    {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
   </div>
 );
 
@@ -76,87 +76,25 @@ const Contact = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gray-50 py-10 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-[#31eddb] via-[#eeebed] to-[#dfe9f3] py-10 px-4">
+        <div className="max-w-7xl mx-auto text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+            <ShinyText
+              text="Get In Touch"
+              disabled={false}
+              speed={3}
+              className="custom-class"
+            />
+          </h1>
+          <p className="text-black text-lg">
+            Tailored packages for all kinds of events. Pick what fits you best
+            or customize your own.
+          </p>
+        </div>
+
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {/* Contact Info */}
-            <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 space-y-6 border border-gray-100">
-              <div className="space-y-2">
-                <h3 className="text-3xl font-bold text-gray-900">
-                  Get In Touch
-                </h3>
-                <p className="text-gray-500 text-base">
-                  We're here to help you create unforgettable events.
-                </p>
-              </div>
-
-              <div className="space-y-4 text-gray-700 text-sm">
-                <div className="flex items-start gap-3">
-                  <FaPhoneAlt className="text-blue-600 mt-1" />
-                  <div>
-                    <span className="font-medium">Phone</span>
-                    <br />
-                    +91 98765 43210
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <FaEnvelope className="text-blue-600 mt-1" />
-                  <div>
-                    <span className="font-medium">Email</span>
-                    <br />
-                    hello@example.com
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <FaMapMarkerAlt className="text-blue-600 mt-1" />
-                  <div>
-                    <span className="font-medium">Address</span>
-                    <br />
-                    Margao, South Goa, India
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <FaInstagram className="text-pink-500 mt-1" />
-                  <div>
-                    <span className="font-medium">Instagram</span>
-                    <br />
-                    @yourpage
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-gray-200 flex gap-6 text-xl text-gray-600">
-                <a
-                  href="https://yourwebsite.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Website"
-                  className="hover:text-blue-600 transition"
-                >
-                  <FaGlobe />
-                </a>
-                <a
-                  href="https://twitter.com/yourhandle"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Twitter"
-                  className="hover:text-blue-400 transition"
-                >
-                  <FaTwitter />
-                </a>
-                <a
-                  href="https://facebook.com/yourpage"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Facebook"
-                  className="hover:text-blue-700 transition"
-                >
-                  <FaFacebookF />
-                </a>
-              </div>
-            </div>
-
-            {/* Contact Form */}
+            {/* Contact Form on the LEFT */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -204,11 +142,11 @@ const Contact = () => {
                     <option value="Corporate Event">Corporate Event</option>
                     <option value="Concert">Concert</option>
                   </select>
-                  <label className="absolute left-3 top-1 text-xs text-gray-500 peer-focus:text-blue-600">
+                  <label className="absolute left-3 top-1 text-xs text-gray-700 peer-focus:text-[#31eddb]">
                     Event Type
                   </label>
                   {errors.event && (
-                    <p className="mt-1 text-sm text-red-500">{errors.event}</p>
+                    <p className="mt-1 text-sm text-red-600">{errors.event}</p>
                   )}
                 </div>
                 <div className="relative">
@@ -222,38 +160,104 @@ const Contact = () => {
                       errors.message ? "border-red-500" : "border-gray-300"
                     }`}
                   ></textarea>
-                  <label className="absolute left-3 top-1 text-xs text-gray-500 peer-focus:text-blue-600">
+                  <label className="absolute left-3 top-1 text-xs text-gray-700 peer-focus:text-[#31eddb]">
                     Your Message
                   </label>
                   {errors.message && (
-                    <p className="mt-1 text-sm text-red-500">
+                    <p className="mt-1 text-sm text-red-600">
                       {errors.message}
                     </p>
                   )}
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300"
+                  className="w-full bg-[#31eddb] hover:bg-[#28b9ad] text-white font-semibold py-3 rounded-lg transition duration-300"
                 >
                   Submit
                 </button>
               </form>
             </motion.div>
-          </div>
 
-          {/* Google Map */}
-          <div>
-            <iframe
-              title="Google Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19822.5849110418!2d-0.1285909524894658!3d51.50336413121351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760351e5c0d1bf%3A0x96e81c7aa7c81a07!2sLondon%20Eye!5e0!3m2!1sen!2sin!4v1638478193273!5m2!1sen!2sin"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-xl shadow"
-            ></iframe>
+            {/* Contact Details on the RIGHT */}
+            <div className="bg-white rounded-xl shadow-md p-8 space-y-8">
+              <div className="space-y-3">
+                <p className="text-gray-600 text-lg max-w-md">
+                  We're here to help you create unforgettable events.
+                </p>
+              </div>
+
+              <div className="space-y-6 text-gray-700 text-base">
+                {[
+                  {
+                    icon: FaPhoneAlt,
+                    label: "Phone",
+                    value: "+91 98765 43210",
+                    bg: "bg-[#31eddb]",
+                  },
+                  {
+                    icon: FaEnvelope,
+                    label: "Email",
+                    value: "hello@example.com",
+                    bg: "bg-[#31eddb]",
+                  },
+                  {
+                    icon: FaMapMarkerAlt,
+                    label: "Address",
+                    value: "Margao, South Goa, India",
+                    bg: "bg-[#31eddb]",
+                  },
+                  {
+                    icon: FaInstagram,
+                    label: "Instagram",
+                    value: "@yourpage",
+                    bg: "bg-pink-500",
+                  },
+                ].map(({ icon: Icon, label, value, bg }) => (
+                  <div key={label} className="flex items-center gap-4">
+                    <div
+                      className={`${bg} p-3 rounded-full text-white text-xl flex items-center justify-center shadow`}
+                    >
+                      <Icon />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">{label}</h4>
+                      <p className="opacity-90">{value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-6 border-t border-gray-100 flex gap-8 text-2xl text-gray-500">
+                {[
+                  {
+                    href: "https://yourwebsite.com",
+                    icon: FaGlobe,
+                    label: "Website",
+                  },
+                  {
+                    href: "https://twitter.com/yourhandle",
+                    icon: FaTwitter,
+                    label: "Twitter",
+                  },
+                  {
+                    href: "https://facebook.com/yourpage",
+                    icon: FaFacebookF,
+                    label: "Facebook",
+                  },
+                ].map(({ href, icon: Icon, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={label}
+                    className="hover:text-[#31eddb] transition-colors duration-300 ease-in-out"
+                  >
+                    <Icon />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

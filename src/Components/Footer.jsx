@@ -21,18 +21,24 @@ const Footer = () => {
 
       {/* Description */}
       <p className="max-w-2xl mx-auto text-sm text-gray-400 px-4 mb-6 leading-relaxed">
-        H&M’s business concept is to offer fashion and quality at the best price
-        in a sustainable way. H&M has since it was founded in 1947 grown into
-        one of the world’s leading fashion companies. The content of this site
-        is copyright-protected and is the property of H&M Hennes & Mauritz AB.
+        Swastika is a Goa-based event management agency that crafts
+        unforgettable experiences with elegance and precision. From destination
+        weddings and private celebrations to corporate events and cultural
+        festivals, we bring creativity, professionalism, and a deep
+        understanding of detail to every occasion. Rooted in Goan warmth and
+        driven by passion, Swastika transforms your vision into seamless,
+        memorable moments.
       </p>
 
       {/* Logo */}
-
-      <img src="/src\assets\logo1.png" alt="" className="h-8 mx-auto mb-2" />
+      <img
+        src="/src/assets/logo1.png"
+        alt="Swastika Logo"
+        className="h-8 mx-auto mb-2"
+      />
 
       {/* Country & Currency */}
-      <div className="text-sm text-gray-400">United Kingdom | £</div>
+      <div className="text-sm text-gray-400">India | ₹</div>
     </footer>
   );
 };

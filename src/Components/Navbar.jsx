@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import {
-  FaBars,
-  FaTimes,
-  FaWhatsapp,
-  FaSearch,
-  FaShoppingCart,
-} from "react-icons/fa";
+import { FaBars, FaTimes, FaWhatsapp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assets/logo1.png"; // Adjust the path as necessary
+import logo from "../assets/logo1.png";
 
 const navLinks = [
   { name: "Home", to: "/" },
   { name: "Gallery", to: "/gallery" },
   { name: "Services", to: "/services" },
   { name: "Contact", to: "/contact" },
-  { name: "About", to: "/about" },
+  { name: "Prices", to: "/prices" },
 ];
 
 const Navbar = () => {
@@ -28,21 +22,23 @@ const Navbar = () => {
         {/* Logo + Brand */}
         <div className="flex items-center space-x-2">
           <img src={logo} alt="Logo" className="h-10" />
-          <span className="text-2xl font-serif italic text-gray-800">
-            Pozze
+          <span className="text-xl font-serif italic text-gray-800">
+            Swastika
           </span>
         </div>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex items-center space-x-10 font-semibold text-sm tracking-wider uppercase text-gray-700">
+        <ul className="hidden md:flex h-full items-center space-x-10 font-medium text-sm tracking-wide uppercase leading-[1]">
           {navLinks.map((link) => (
-            <li key={link.name}>
+            <li key={link.name} className="h-full flex items-center">
               <NavLink
                 to={link.to}
                 className={({ isActive }) =>
-                  isActive
-                    ? "text-black underline underline-offset-8"
-                    : "hover:text-black"
+                  `no-underline hover:no-underline ${
+                    isActive
+                      ? "text-black border-b-2 border-black"
+                      : "text-gray-700 hover:text-black"
+                  }`
                 }
               >
                 {link.name}
@@ -52,19 +48,15 @@ const Navbar = () => {
         </ul>
 
         {/* Right Icons */}
-        {/* Right Icons */}
         <div className="flex items-center space-x-4 text-lg text-gray-700">
-          {/* WhatsApp Button */}
           <a
             href="https://wa.me/919119455139"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-green-500 px-3 py-1 rounded-full flex items-center gap-2  transition text-3xl"
+            className="text-green-500 px-3 py-1 rounded-full flex items-center gap-2 text-3xl"
           >
             <FaWhatsapp />
           </a>
-
-          {/* Mobile Menu Toggle */}
           <button onClick={toggleMenu} className="md:hidden focus:outline-none">
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -87,9 +79,9 @@ const Navbar = () => {
                 to={link.to}
                 onClick={toggleMenu}
                 className={({ isActive }) =>
-                  `text-lg font-semibold tracking-wide uppercase ${
+                  `text-lg font-semibold tracking-wide uppercase no-underline hover:no-underline ${
                     isActive
-                      ? "text-black underline"
+                      ? "text-black border-b-2 border-black pb-1"
                       : "text-gray-700 hover:text-black"
                   }`
                 }

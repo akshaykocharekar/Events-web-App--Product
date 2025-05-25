@@ -1,11 +1,10 @@
 .shiny-text {
-  color: rgba(0, 0, 0, 0.64); /* Softer black for elegant text */
-
+  color: #00baba72; /* Adjust this color to change intensity/style */
   background: linear-gradient(
     120deg,
-    rgba(18, 18, 18, 0) 40%,
-    rgba(255, 255, 255, 0.85) 50%,
-    rgba(195, 155, 26, 0) 60%
+    rgb(3, 219, 248) 40%,
+    rgba(227, 9, 187, 0.8) 50%,
+    rgb(102, 1, 107) 60%
   );
   background-size: 200% 100%;
   -webkit-background-clip: text;
