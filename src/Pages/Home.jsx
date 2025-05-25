@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { AnimatedTestimonials } from "../Components/AnimatedTestimonials";
+// ✅ correct
 import { TypewriterEffectSmooth } from "../Components/TypewriterEffect";
+
 import Layout from "../Components/Layout";
 
 const words = [
