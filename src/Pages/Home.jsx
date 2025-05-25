@@ -137,7 +137,7 @@ const Home = () => {
         <h2 className="text-2xl sm:text-3xl md:text-4xl italic font-serif text-center mb-6 text-neutral-700">
           What our clients say about us
         </h2>
-        <AnimatedTestimonials testimonials={testimonials} autoplay={true} />
+        <AnimatedTestimonials testimonials={testimonials} autoplay={false} />
       </section>
 
       {/* Stats Section */}

@@ -6,7 +6,7 @@ import {
   FaYoutube,
   FaPinterest,
 } from "react-icons/fa";
-
+import logo1 from "../assets/logo1.png";
 const Footer = () => {
   return (
     <footer className="bg-[#000] text-white text-center py-10 font-sans">
@@ -31,11 +31,7 @@ const Footer = () => {
       </p>
 
       {/* Logo */}
-      <img
-        src="/src/assets/logo1.png"
-        alt="Swastika Logo"
-        className="h-8 mx-auto mb-2"
-      />
+      <img src={logo1} alt="Swastika Logo" className="h-8 mx-auto mb-2" />
 
       {/* Country & Currency */}
       <div className="text-sm text-gray-400">India | ₹</div>
