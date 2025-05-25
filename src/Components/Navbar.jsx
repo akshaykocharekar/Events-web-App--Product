@@ -48,7 +48,7 @@ const Navbar = () => {
         </ul>
 
         {/* Right Icons */}
-        <div className="flex items-center space-x-4 text-lg text-gray-700">
+        <div className="flex items-center space-x-4 text-lg">
           <a
             href="https://wa.me/919119455139"
             target="_blank"

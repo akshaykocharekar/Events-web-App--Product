@@ -136,7 +136,7 @@ const Contact = () => {
                       errors.event ? "border-red-500" : "border-gray-300"
                     }`}
                   >
-                    <option value="">Select Event</option>
+                    <option value=""></option>
                     <option value="Wedding">Wedding</option>
                     <option value="Birthday Party">Birthday Party</option>
                     <option value="Corporate Event">Corporate Event</option>

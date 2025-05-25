@@ -82,10 +82,14 @@ const Services = () => {
             your occasion.
           </p>
           <div className="mt-8">
-            <button
-              className="px-6 py-3 bg-pink-600 hover:bg-pink-700 transition text-white font-semibold shadow-lg w-45"
-              style={{ borderRadius: "30px" }}
-            ></button>
+            <NavLink to="/contact">
+              <button
+                className="px-6 py-3 bg-pink-600 hover:bg-pink-700 transition text-white font-semibold shadow-lg w-45"
+                style={{ borderRadius: "30px" }}
+              >
+                Get Connected
+              </button>
+            </NavLink>
           </div>
         </div>
 
